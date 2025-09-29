@@ -7,8 +7,8 @@
         : route('products.store', $organisation->uid);
 
     // Conditional layout
-    $layout = class_exists(\Iquesters\UserManagement\UserManagementServiceProvider::class)
-        ? 'usermanagement::layouts.app'
+    $layout = class_exists(\Iquesters\UserInterface\UserInterfaceServiceProvider::class)
+        ? 'userinterface::layouts.app'
         : config('product.layout');
 @endphp
 
