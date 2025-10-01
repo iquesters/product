@@ -13,7 +13,8 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Iquesters\\Product\\": "src/"
+      "Iquesters\\Product\\": "src/",
+      "Iquesters\\Product\\Database\\Seeders\\": "database/seeders/"
     }
   },
   "autoload-dev": {
@@ -29,9 +30,9 @@
   ],
   "extra": {
     "laravel": {
-        "providers": [
-            "Iquesters\\Product\\ProductServiceProvider"
-        ]
+      "providers": [
+        "Iquesters\\Product\\ProductServiceProvider"
+      ]
     }
   },
   "minimum-stability": "dev",
