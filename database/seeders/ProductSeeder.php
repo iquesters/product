@@ -2,11 +2,33 @@
 
 namespace Iquesters\Product\Database\Seeders;
 
-use Iquesters\Product\Database\Seeders\BaseModuleSeeder;
+use Iquesters\Foundation\Database\Seeders\BaseModuleSeeder;
 
 class ProductSeeder extends BaseModuleSeeder
 {
     protected string $moduleName = 'product';
     protected string $description = 'product module';
-    protected array $metas = [];
+    protected array $metas = [
+        'module_icon' => 'fa-solid fa-box',
+        'module_sidebar_menu' => [
+            [
+                "icon" => "fa-solid fa-box",
+                "label" => "Products",
+                "route" => "products.index",
+                "params" => ["organisationUid" => null]
+            ],
+            [
+                "icon" => "fa-solid fa-plus",
+                "label" => "Add Product",
+                "route" => "products.create",
+                "params" => ["organisationUid" => null]
+            ],
+            [
+                "icon" => "fa-solid fa-tags",
+                "label" => "Categories",
+                "route" => "categories.index",
+                "params" => ["organisationUid" => null]
+            ]
+        ]
+    ];
 }
