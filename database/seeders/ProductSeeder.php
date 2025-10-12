@@ -2,9 +2,9 @@
 
 namespace Iquesters\Product\Database\Seeders;
 
-use Iquesters\Foundation\Database\Seeders\BaseModuleSeeder;
+use Iquesters\Foundation\Database\Seeders\BaseSeeder;
 
-class ProductSeeder extends BaseModuleSeeder
+class ProductSeeder extends BaseSeeder
 {
     protected string $moduleName = 'product';
     protected string $description = 'product module';
@@ -16,19 +16,16 @@ class ProductSeeder extends BaseModuleSeeder
                 "label" => "Products",
                 "route" => "products.index",
                 "params" => ["organisationUid" => null]
-            ],
-            [
-                "icon" => "fa-solid fa-plus",
-                "label" => "Add Product",
-                "route" => "products.create",
-                "params" => ["organisationUid" => null]
-            ],
-            [
-                "icon" => "fa-solid fa-tags",
-                "label" => "Categories",
-                "route" => "categories.index",
-                "params" => ["organisationUid" => null]
             ]
         ]
     ];
+
+    /**
+     * Implement abstract method from BaseSeeder
+     */
+    protected function seedCustom(): void
+    {
+        // Add custom seeding logic here if needed
+        // Leave empty if none
+    }
 }
