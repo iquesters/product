@@ -4,6 +4,9 @@ namespace Iquesters\Product;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Console\Command;
+use Iquesters\Foundation\Support\ConfProvider;
+use Iquesters\Foundation\Enums\Module;
+use Iquesters\Product\Config\ProductConf;
 use Iquesters\Product\Database\Seeders\ProductSeeder;
 
 class ProductServiceProvider extends ServiceProvider
@@ -14,7 +17,8 @@ class ProductServiceProvider extends ServiceProvider
     public function register(): void
     {
         // Merge package configuration
-        $this->mergeConfigFrom(__DIR__ . '/../config/product.php', 'product');
+        // $this->mergeConfigFrom(__DIR__ . '/../config/product.php', 'product');
+        ConfProvider::register(Module::PRODUCT, ProductConf::class);
 
         $this->registerSeedCommand();
     }
